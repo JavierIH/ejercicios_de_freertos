@@ -127,7 +127,7 @@ void task1() {
 	while (1) {
 		printf("\nThis is task 1");
 		fflush(stdout);
-		vTaskDelay(100);
+		vTaskDelay(100/portTICK_PERIOD_MS);
 	}
 }
 
@@ -135,7 +135,7 @@ void task2(){
 	while (1) {
 		printf("\nThis is task 2");
 		fflush(stdout);
-		vTaskDelay(500);
+		vTaskDelay(500/portTICK_PERIOD_MS);
 	}
 }
 
