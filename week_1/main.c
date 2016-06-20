@@ -152,25 +152,9 @@ int main(void)
 	vTraceInitTraceData();
 	xTickTraceUserEvent = xTraceOpenLabel("tick");
 
-	BaseType_t xReturned;
-	TaskHandle_t xHandle = NULL;
-
 	/* Create the task, storing the handle. */
-	xReturned = xTaskCreate(
-		task1,       /* Function that implements the task. */
-		"Task1",          /* Text name for the task. */
-		1000,      /* Stack size in words, not bytes. */
-		(void *)1,    /* Parameter passed into the task. */
-		3,/* Priority at which the task is created. */
-		&xHandle);      /* Used to pass out the created task's handle. */
-
-	xReturned = xTaskCreate(
-		task2,       /* Function that implements the task. */
-		"Task2",          /* Text name for the task. */
-		100,      /* Stack size in words, not bytes. */
-		(void *)1,    /* Parameter passed into the task. */
-		1,/* Priority at which the task is created. */
-		&xHandle);      /* Used to pass out the created task's handle. */
+	xTaskCreate(task1, "Task1", 1000, NULL, 3, NULL);
+	xTaskCreate(task2, "Task2", 100, NULL, 1, NULL);
 
 	//This starts the real-time scheduler
 	vTaskStartScheduler();
