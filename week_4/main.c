@@ -300,8 +300,8 @@ int main(void)
 
 	/* Create the task, storing the handle. */
 	xTaskCreate((pdTASK_CODE)matrix_task, (signed char *)"Matrix", 1000, NULL, 3, &matrix_handle);
-	xTaskCreate((pdTASK_CODE)communication_task, (signed char *)"Communication", configMINIMAL_STACK_SIZE, NULL, 1, &communication_handle);
-	xTaskCreate((pdTASK_CODE)prioritysettask, (signed char *)"Priority", configMINIMAL_STACK_SIZE, NULL, 5, &priority_handle);
+	//xTaskCreate((pdTASK_CODE)communication_task, (signed char *)"Communication", configMINIMAL_STACK_SIZE, NULL, 1, &communication_handle);
+	//xTaskCreate((pdTASK_CODE)prioritysettask, (signed char *)"Priority", configMINIMAL_STACK_SIZE, NULL, 5, &priority_handle);
 
 	//This starts the real-time scheduler
 	vTaskStartScheduler();
